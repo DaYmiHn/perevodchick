@@ -8,7 +8,7 @@ foreach ($html->find('.recent_post') as $block) {
 		$img->src = 'http://englishon-line.ru/'.$img->src;
 		$text = $row->find('div',0);
 
-		echo "<a class=\"blog-content material\" style='background-image: url(".$img->src."); background-size: cover;'><span>".$text->innertext."</span></a>";
+		echo "<a class=\"blog-content material\" href=\""."sddfg"."\" style='background-image: url(".$img->src."); background-size: cover;'><span>".$text->innertext."</span></a>";
 		
 	}
 }

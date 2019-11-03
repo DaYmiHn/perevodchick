@@ -31,7 +31,7 @@ chrome.tabs.executeScript( {
 	    var text = selection+" - "+result.text;
   		$('#output').html(text);
   		$.ajax({
-				url: "http://perevod/index.php?word="+selection+"&perevod="+result.text,
+				url: "http://perevodchick/index.php?word="+selection+"&perevod="+result.text,
 				success: function(data){
 					console.log(data);
 
