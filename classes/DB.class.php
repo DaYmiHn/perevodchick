@@ -4,7 +4,7 @@ class DB {
 protected 	$db_name = 'perevod',
 			$db_user = 'root',
 			$db_pass = '',
-			$db_host = '192.168.0.2';
+			$db_host = 'localhost';
 protected 	$connection;
 
 function __construct() {
