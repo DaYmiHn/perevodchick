@@ -71,6 +71,7 @@ h1,h2,h3,h4,h5,h6{
 span{
 	border-radius: 3%;
 	background-color: rgba(255,255,255,.5);
+	/*margin: 10px!important;*/
 
 }
 
@@ -96,7 +97,8 @@ span{
     cursor: pointer;
 }
 
-a{color: black;font-weight: 600;}
+a{color: black;font-weight: 600;    text-decoration: none;
+    }
 
 .output{
 	width: 300px;

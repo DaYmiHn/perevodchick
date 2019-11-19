@@ -1,3 +1,7 @@
+// function ajax(url){
+// 	$.ajax({url: url,success: function(data){return(data);}});
+// }
+
 var from_vkladka = '#container';
 $('.header_item').click(function(){
 	var to_vkladka = $(this).attr('class').split(' ')[1];
@@ -29,6 +33,15 @@ $('.textbox_slovar').keyup(function(){
 	});
 });
 
-$('.true').click(function(){$(this).css({"background-color": "green"}); $('.viktoryna').html(''); $('.viktoryna').load( "../script/viktoryna.php" ); });
-$('.false').click(function(){$(this).css({"background-color": "red"}); $('.viktoryna').html(''); $('.viktoryna').load( "../script/viktoryna.php" ); });
+$(document).on('click','.true', function() { 
+	$(this).css({"background-color": "green"}); 
+	$.ajax({url: '../script/viktoryna.php',success: function(data){$('.viktoryna').html(data)}});
+	$.ajax({url: '../script/rating_word.php?id='+this.id+"&action=inc"});
+	
+});
+$(document).on('click','.false', function() { 
+	$(this).css({"background-color": "red"}); 
+	$.ajax({url: '../script/viktoryna.php',success: function(data){$('.viktoryna').html(data)}});
+	$.ajax({url: '../script/rating_word.php?id='+this.id+"&action=dec"});
+});
 

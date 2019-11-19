@@ -28,11 +28,7 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 		<center><img src="src/2.png" alt=""><br>
 		<h1 style="font-family: Arial; font-weight: 900;">ЧИПСИКИ</h1></center>
 	</div>
-	<div id="gramm_head_item">
-
-		<center><img src="src/1.jpg" alt=""><br>
-		<h1 style="font-family: Arial; font-weight: 900;">ХОБА</h1></center>
-	</div>
+	
 	<div id="container">
 		<div class="gramm-block material">
 			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=PLD6SPjEPomasIFEwzlWscfw8qtwiDsDgL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -68,12 +64,21 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 			</div>
 		</div>
 		<div class="blog-block material">
+			
 			<?php include 'script/graber_statey.php'; ?>
 		</div>
 		
 	</div>
 	<div class="viktoryna material">
 		<?php include 'script/viktoryna.php' ?>
+	</div>
+	<div id="gramm_head_item">
+
+		<!-- <center><img src="src/1.jpg" alt=""><br>
+		<h1 style="font-family: Arial; font-weight: 900;">ХОБА</h1></center> -->
+		<?php 
+include 'script/gramm_parser.php';
+		 ?>
 	</div>
 <script src="js/script.js"></script>
 <script>
