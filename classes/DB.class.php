@@ -7,7 +7,7 @@ protected 	$db_name = 'perevod',
 			$db_host = 'localhost';
 protected 	$connection;
 
-function __construct($name,$name2) {
+function __construct() {
 	$this->connect();
 }
 
@@ -29,6 +29,18 @@ public function add_word_history($word, $perevod) {
 	$result = $this->connection->query($sql);
 }
 
-
+public function viktoryna() {
+	$sql = "SELECT * FROM history ORDER BY RAND() LIMIT 1";
+	$result = $this->connection->query($sql);
+	while ($row=$result->fetch()){
+		echo  "<div class=\"word\">".$row['word']."</div>";	
+		echo  "<div class=\"var true\">".$row['perevod']."</div>";	
+	}
+	$sql = "SELECT * FROM history ORDER BY RAND() LIMIT 1";
+	$result = $this->connection->query($sql);
+	while ($row=$result->fetch()){
+		echo  "<div class=\"var false\">".$row['perevod']."</div>";	
+	}
+}
 
 }

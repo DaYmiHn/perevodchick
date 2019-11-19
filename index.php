@@ -1,7 +1,6 @@
 <?php 
-include 'classes/DB.class.php';
-require_once "libs/simple_html_dom.php";
-$db = new DB('1','2');
+require_once "classes/autoload.php";
+$db = new DB();
 if(isset($_GET['word']) && isset($_GET['perevod'])){
 	$db->add_word_history($_GET['word'],$_GET['perevod']);
 }
@@ -72,6 +71,9 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 			<?php include 'script/graber_statey.php'; ?>
 		</div>
 		
+	</div>
+	<div class="viktoryna material">
+		<?php include 'script/viktoryna.php' ?>
 	</div>
 <script src="js/script.js"></script>
 <script>

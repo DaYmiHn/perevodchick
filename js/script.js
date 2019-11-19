@@ -29,3 +29,6 @@ $('.textbox_slovar').keyup(function(){
 	});
 });
 
+$('.true').click(function(){$(this).css({"background-color": "green"}); $('.viktoryna').html(''); $('.viktoryna').load( "../script/viktoryna.php" ); });
+$('.false').click(function(){$(this).css({"background-color": "red"}); $('.viktoryna').html(''); $('.viktoryna').load( "../script/viktoryna.php" ); });
+
