@@ -45,3 +45,7 @@ $(document).on('click','.false', function() {
 	$.ajax({url: '../script/rating_word.php?id='+this.id+"&action=dec"});
 });
 
+$(document).on('click','.gramm_head', function() { 
+	let selector = '#'+this.id+'.gramm_body';
+	$(selector).toggle();
+});

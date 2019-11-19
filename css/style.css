@@ -192,3 +192,10 @@ blockquote {
 .var:hover{
 	background-color: #cecece;
 }
+
+.gramm_body{
+	display: none;
+}
+.gramm_head{
+	cursor: pointer;
+}
