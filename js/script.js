@@ -49,3 +49,8 @@ $(document).on('click','.gramm_head', function() {
 	let selector = '#'+this.id+'.gramm_body';
 	$(selector).toggle();
 });
+
+$('#login').click(function(){
+	$('.notice').toggle();
+	$('.log_form').toggle();
+});

@@ -20,7 +20,7 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 		<div></div>
 		<div class="header_item container"><p>ГЛАВНАЯ</p></div>
 		<div class="header_item gramm_head_item"><p>УРОКИ</p></div>
-		<div class="header_item test_head_item"><p>ТЕСТЫ</p></div>
+		<!-- <div class="header_item test_head_item"><p>ТЕСТЫ</p></div> -->
 		<div class="header_item podbor_head_item"><p>МОЙ ПРОФИЛЬ</p></div>
 		<div></div>
 	</header>
@@ -34,11 +34,20 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=PLD6SPjEPomasIFEwzlWscfw8qtwiDsDgL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 		<div class="acount-block material">
-			<h2>А вы знали?</h2><br>
+			<div class="notice">
+				<h2>А вы знали?</h2><br>
 			Что было бы отлично, если бы вы зашли в свой аккаунт <br>
+			</div>
+			<div class="log_form" style="display: none;">
+				<h3>Введите логин и пароль:</h3>
+				<input type="text" id="login_log" placeholder="Логин"><br><br>
+				<input type="text" id="login_pas" placeholder="Пароль"><br>
+
+			</div>
+			
 			<div class="buttons">
 				<div class="button" id="login">войти</div>
-				<div class="button" id="registration">регистрация</div>
+				<!-- <div class="button" id="registration">регистрация</div> -->
 			</div>
 		</div>
 		<div class="history-block material">
