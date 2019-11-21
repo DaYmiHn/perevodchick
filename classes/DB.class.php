@@ -59,4 +59,27 @@ public function increment_word_rate($id,$action) {
 	$result = $this->connection->query($sql);
 }
 
+
+public function login($login,$pass) {
+	$sql = "SELECT * FROM user WHERE login = '".$login."'";
+	$result = $this->connection->query($sql);
+	$row=$result->fetch();
+	if ($row['login'] == $login && $row['pass'] == $pass){
+     	$_SESSION["id"] = $row['id'];
+		$_SESSION["login"] = $login;
+     	$_SESSION["pass"] = $pass;
+     	echo "да";
+	} else {
+		$sql = "INSERT INTO `user` (`login`, `pass`) VALUES ('".$login."', '".$pass."')";
+		echo $sql;
+		$result = $this->connection->query($sql);
+		$sql = "SELECT * FROM user WHERE login = '".$login."'";
+		$result = $this->connection->query($sql);
+		$row=$result->fetch();
+     	$_SESSION["id"] = $row['id'];
+		$_SESSION["login"] = $login;
+     	$_SESSION["pass"] = $pass;
+     	echo "да";
+	}
+}
 }

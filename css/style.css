@@ -130,7 +130,7 @@ blockquote {
 }
 
 
-#gramm_head_item, #test_head_item{
+#gramm_head_item, #test_head_item,#profile_head_item{
 	display: none;
 	width: 900px;
 	margin:0 auto;

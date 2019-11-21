@@ -47,10 +47,32 @@ $(document).on('click','.false', function() {
 
 $(document).on('click','.gramm_head', function() { 
 	let selector = '#'+this.id+'.gramm_body';
-	$(selector).toggle();
+	$(selector).slideToggle();
 });
 
 $('#login').click(function(){
-	$('.notice').toggle();
-	$('.log_form').toggle();
+	$('.notice').hide();
+	$('.log_form').show();
+	if ($('.log_form').hasClass('active')) {
+		$.ajax({
+			type: "GET",
+			url: "../script/log_handler.php",
+			data: { log: $('#login_log').val(), pas: $('#login_pas').val() },
+			success: function(data) {
+			  if (data == "да") {console.log('Вошли'); window.location.reload();}
+			  if (data == "не") {alert('Не верный логин или пароль')}   
+			}
+		});   
+	} else {
+		$('.log_form').addClass("active");
+	}
+});
+
+$('#exit').click(function(){
+	$.ajax({
+    url: "../script/log_handler.php?pass=exit",
+    success: function(data) {
+        window.location.reload();
+    }
+  });   
 });
