@@ -71,7 +71,7 @@ public function login($login,$pass) {
      	echo "да";
 	} else {
 		$sql = "INSERT INTO `user` (`login`, `pass`) VALUES ('".$login."', '".$pass."')";
-		echo $sql;
+		// echo $sql;
 		$result = $this->connection->query($sql);
 		$sql = "SELECT * FROM user WHERE login = '".$login."'";
 		$result = $this->connection->query($sql);

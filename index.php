@@ -37,7 +37,7 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 		<div class="acount-block material">
 			<?php 
 			if (isset($_SESSION['login'])) {
-				echo $_SESSION["id"].$_SESSION["login"].$_SESSION["pass"]."<br>";
+				echo "Привет <b>".$_SESSION["login"]."</b><br>ID: ".$_SESSION["id"]."<br>Пароль: ".$_SESSION["pass"]."<br>";
 				echo '<input type="button" id="exit" value="ВЫЙТИ">';
 			} else {
 				echo '<div class="notice">
