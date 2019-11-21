@@ -18,7 +18,7 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 <body>
 	
 	<header id="header" class="material">
-		<div></div>
+		<div> </div>
 		<div class="header_item container"><p>ГЛАВНАЯ</p></div>
 		<div class="header_item gramm_head_item"><p>УРОКИ</p></div>
 		<!-- <div class="header_item test_head_item"><p>ТЕСТЫ</p></div> -->
