@@ -70,6 +70,8 @@ public function login($login,$pass) {
 		$_SESSION["login"] = $login;
      	$_SESSION["pass"] = $pass;
      	echo "да";
+	} elseif ($row['login'] == $login && $row['pass'] != $pass) {
+		echo "не";
 	} else {
 		$sql = "INSERT INTO `user` (`login`, `pass`) VALUES ('".$login."', '".$pass."')";
 		$result = $this->connection->query($sql);
