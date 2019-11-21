@@ -32,7 +32,7 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 	
 	<div id="container">
 		<div class="gramm-block material">
-			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=PLD6SPjEPomasIFEwzlWscfw8qtwiDsDgL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=PLD6SPjEPomasIFEwzlWscfw8qtwiDsDgL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 		</div>
 		<div class="acount-block material">
 			<?php 
@@ -98,7 +98,20 @@ include 'script/gramm_parser.php';
 		 ?>
 	</div>
 	<div id="profile_head_item">
-		<?php echo $_SESSION["id"].$_SESSION["login"].$_SESSION["pass"]; ?>
+		<div class="profile_header">
+			<div class="avatar">
+			    <img id="avarat_foto" src="src/2.png" alt="" />
+			</div>
+			<?php echo "Привет <b>".$_SESSION["login"]."</b><br>ID: ".$_SESSION["id"]."<br>Пароль: ".$_SESSION["pass"]."<br>"; ?>
+		</div>
+		<div class="profile_item1"></div>
+		<div class="profile_item2"></div>
+		<div class="profile_item3"></div>
+		<div class="profile_item4"></div>
+		<div class="profile_item5"></div>
+		<div class="profile_item6"></div>
+		 <?php //echo $_SESSION["id"].$_SESSION["login"].$_SESSION["pass"]; ?>
+		 <!-- https://drive.google.com/drive/folders/1TYZ4Vl89z_qt4RKT-SfKaV4xLVHONF49 -->
 	</div>
 <script src="js/script.js"></script>
 <script>
