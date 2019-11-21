@@ -36,8 +36,9 @@ public function viktoryna() {
 	echo  "<div class=\"word\">".$row['word']."</div>";	
 	$id = $row['id'];
 	$true = "<div class=\"var true\" id='".$id."'>".$row['perevod']."</div>";	
-
-	$sql = "SELECT * FROM history ORDER BY RAND() LIMIT 1";
+	$true_word = $row['perevod'];
+	$sql = "SELECT * FROM history WHERE perevod !='".$true_word."' ORDER BY RAND() LIMIT 1";
+	// echo $sql;
 	$result = $this->connection->query($sql);
 	$row=$result->fetch();
 	$id = $row['id'];
@@ -71,7 +72,6 @@ public function login($login,$pass) {
      	echo "да";
 	} else {
 		$sql = "INSERT INTO `user` (`login`, `pass`) VALUES ('".$login."', '".$pass."')";
-		// echo $sql;
 		$result = $this->connection->query($sql);
 		$sql = "SELECT * FROM user WHERE login = '".$login."'";
 		$result = $this->connection->query($sql);
