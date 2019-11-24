@@ -5,7 +5,7 @@ protected 	$db_name = 'perevod',
 			$db_user = 'root',
 			$db_pass = '',
 			$db_host = 'localhost';
-protected 	$connection;
+public 	$connection;
 
 function __construct() {
 	$this->connect();
@@ -83,5 +83,11 @@ public function login($login,$pass) {
      	$_SESSION["pass"] = $pass;
      	echo "да";
 	}
+}
+
+
+public function change_fio($fio,$id) {
+	$sql = "UPDATE `user` SET `fio` = '".$fio."' WHERE `id`=".$id;	
+	$result = $this->connection->query($sql);
 }
 }

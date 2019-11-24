@@ -76,3 +76,14 @@ $('#exit').click(function(){
     }
   });   
 });
+$('#fio').click(function(){
+	// alert();
+	if($(this).text() == "Введите Имя и Фамилию"){
+		$('#fio').css( "color", "black" );
+		$('#fio').css( "text-decoration;", "none" );
+	}
+
+});
+$('#fio').keyup(function(){
+	$.ajax({url: "../script/change_fio.php?fio="+$(this).text()+"&id="+$('#id').val()}); 
+});

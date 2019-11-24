@@ -21,7 +21,6 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 		<div> </div>
 		<div class="header_item container"><p>ГЛАВНАЯ</p></div>
 		<div class="header_item gramm_head_item"><p>УРОКИ</p></div>
-		<!-- <div class="header_item test_head_item"><p>ТЕСТЫ</p></div> -->
 		<div class="header_item profile_head_item"><p>МОЙ ПРОФИЛЬ</p></div>
 		<div></div>
 	</header>
@@ -97,19 +96,28 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 include 'script/gramm_parser.php';
 		 ?>
 	</div>
-	<div id="profile_head_item">
-		<div class="profile_header">
+	<div id="profile_head_item" style="display: none;">
+		<div class="profile_header material">
 			<div class="avatar">
 			    <img id="avarat_foto" src="src/2.png" alt="" />
 			</div>
-			<?php echo "Привет <b>".$_SESSION["login"]."</b><br>ID: ".$_SESSION["id"]."<br>Пароль: ".$_SESSION["pass"]."<br>"; ?>
+			<input type="hidden" id="id" value="<?php echo $_SESSION["id"]; ?> ">
+			<?php //echo "Привет <b>".$_SESSION["login"]."</b><br>ID: ".$_SESSION["id"]."<br>Пароль: ".$_SESSION["pass"]."<br>"; ?>
+			<h1 contenteditable="true" id="fio">Введите Имя и Фамилию</h1>
+			<p>likusha онлайн около 2 часов назад</p>
+			<p>marika жен 19 лет  на сайте с марта 2019 г.</p>
 		</div>
-		<div class="profile_item1"></div>
-		<div class="profile_item2"></div>
-		<div class="profile_item3"></div>
-		<div class="profile_item4"></div>
-		<div class="profile_item5"></div>
-		<div class="profile_item6"></div>
+		<div class="profile_item1 material"><div class="cc-achievements"><div class="b-achievement is-badge" data-hint="100 просмотренных аниме" data-progress="94" data-title="Мои силы растут!"><div class="c-image"><div class="inner"><a href="https://shikimori.one/achievements/common/animelist"><div class="border" style="border-color: #6a5acd"></div><img width="100%" src="https://shikimori.one/assets/achievements/anime/animelist_3.jpg"></a></div></div></div></div></div>
+
+
+		<div class="profile_item2 material">
+			<div class="c-column"><div class="header"><div class="title">Жанровые</div></div><div class="cc-achievements"><div class="b-achievement is-badge" data-hint="Безумие / Психологическое 1 уровня" data-progress="13" data-title="Оно существует"><div class="c-image"><div class="inner"><a href="https://shikimori.one/achievements/genre/dementia_psychological"><div class="border" style="border-color: #c71585"></div><img width="33%" src="https://shikimori.one/assets/achievements/anime/dementia_psychological_1.jpg"></a></div></div></div><div class="b-achievement is-badge" data-hint="Драма 1 уровня" data-progress="16" data-title="Скупая слеза"><div class="c-image"><div class="inner"><a href="https://shikimori.one/achievements/genre/drama"><div class="border" style="border-color: #4682B4"></div><img width="33%" src="https://shikimori.one/assets/achievements/anime/drama_1.jpg"></a></div></div></div><div class="b-achievement is-badge" data-hint="Хоррор / Триллер 1 уровня" data-progress="6" data-title="Смерть дышит в спину"><div class="c-image"><div class="inner"><a href="https://shikimori.one/achievements/genre/horror_thriller"><div class="border" style="border-color: #821d60"></div><img width="33%" src="https://shikimori.one/assets/achievements/anime/horror_thriller_1.jpg"></a></div></div></div></div></div>
+
+		</div>
+		<div class="profile_item3 material"></div>
+		<div class="profile_item4 material"></div>
+		<div class="profile_item5 material"></div>
+		<div class="profile_item6 material"></div>
 		 <?php //echo $_SESSION["id"].$_SESSION["login"].$_SESSION["pass"]; ?>
 		 <!-- https://drive.google.com/drive/folders/1TYZ4Vl89z_qt4RKT-SfKaV4xLVHONF49 -->
 	</div>
