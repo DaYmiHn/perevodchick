@@ -36,6 +36,7 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 		<div class="acount-block material">
 			<?php 
 			if (isset($_SESSION['login'])) {
+				echo '<input type="hidden" id="id_user" value="'.$_SESSION["id"].'">';
 				echo "Привет <b>".$_SESSION["login"]."</b><br>ID: ".$_SESSION["id"]."<br>Пароль: ".$_SESSION["pass"]."<br>";
 				echo '<input type="button" id="exit" value="ВЫЙТИ">';
 			} else {
@@ -123,7 +124,23 @@ include 'script/gramm_parser.php';
 	</div>
 <script src="js/script.js"></script>
 <script>
-	let timerId = setInterval(function(){$("#hyinya").load(location.href + " #hyinya");} , 2000)
+	let timerId = setInterval(function(){$("#hyinya").load(location.href + " #hyinya");} , 2000);
+
+	
+	$.ajax({
+		url: '../script/change_fio.php?act=get&id='+$('#id_user').val(),
+		success: function(data){
+			if (data == ""){
+				$('#fio').text('Введите Имя и Фамилию');
+			} else{
+
+			$('#fio').text(data);
+			}
+			if($('#fio').text() != "Введите Имя и Фамилию"){
+		$('#fio').css( "color", "black" );
+		$('#fio').css( "text-decoration;", "none" );
+	}
+		}});
 </script>
 </body>
 </html>

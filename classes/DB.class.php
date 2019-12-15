@@ -90,4 +90,11 @@ public function change_fio($fio,$id) {
 	$sql = "UPDATE `user` SET `fio` = '".$fio."' WHERE `id`=".$id;	
 	$result = $this->connection->query($sql);
 }
+
+public function get_fio($id) {
+	$sql = "SELECT `fio` FROM `user` WHERE `id` = ".$id;	
+	$result = $this->connection->query($sql);
+	$row=$result->fetch();
+	echo $row['fio'];
+}
 }
