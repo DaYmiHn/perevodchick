@@ -11,8 +11,10 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>Курсовик</title>
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="shortcut icon" href="src/favicon.ico
+	" type="image/png">
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -87,9 +89,9 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 		</div>
 		
 	</div>
-	<div class="viktoryna material">
-		<?php include 'script/viktoryna.php' ?>
-	</div>
+	<!-- <div class="viktoryna material">
+		<?php //include 'script/viktoryna.php' ?>
+	</div> -->
 	<div id="gramm_head_item">
 		<!-- <center><img src="src/1.jpg" alt=""><br>
 		<h1 style="font-family: Arial; font-weight: 900;">ХОБА</h1></center> -->
@@ -107,12 +109,14 @@ include 'script/gramm_parser.php';
 			<h1 contenteditable="true" id="fio">Введите Имя и Фамилию</h1>
 			<p>Online</p>
 		</div>
-		<div class="profile_item1 material"></div>
+		<div class="profile_item1 material">Чат</div>
 		<div class="profile_item2 material"></div>
 		<div class="profile_item3 material"></div>
 		<div class="profile_item4 material"></div>
-		<div class="profile_item5 material"></div>
-		<div class="profile_item6 material"></div>
+		<div class="profile_item5 material"><div class="viktoryna material">
+		<?php include 'script/viktoryna.php' ?>
+	</div></div>
+		<!-- <div class="profile_item6 material"></div> -->
 		 <?php //echo $_SESSION["id"].$_SESSION["login"].$_SESSION["pass"]; ?>
 		 <!-- https://drive.google.com/drive/folders/1TYZ4Vl89z_qt4RKT-SfKaV4xLVHONF49 -->
 	</div>
