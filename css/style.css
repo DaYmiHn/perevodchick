@@ -171,8 +171,9 @@ blockquote {
 	grid-template-rows: 1fr 1fr;
 	/*width: 200px;*/
 	height: 90px;
-	top:calc(100vh - 110px);
+	/*top:calc(100vh - 110px);*/
 	right: 10px;
+	    height: 100px;
 	/*padding:5px;*/
 	background-color: #fff;
 }
@@ -216,6 +217,9 @@ blockquote {
 .profile_item1{
 	grid-row: 2/4;
 }
+.profile_item2, .profile_item3, .profile_item4{
+	padding-left: 50px;
+}
 
 .avatar {
 	float: left;
@@ -253,3 +257,37 @@ blockquote {
     height: 40px;
     margin-top: 50px;
 }
+
+.news_content {
+    margin-top: 30px;
+    overflow-x: hidden;
+    height: 250px;
+
+}
+
+#news_add {
+    margin-top: 10px;
+    padding: 5px;
+    border: 2px solid rgb(255, 72, 111);
+}
+.add {
+    cursor: pointer;
+}
+.search {
+    width: 300px; /* Ширина поля с кнопкой */
+    border: 1px solid #c5c5c5; /* Параметры рамки */
+    min-height: 20px; /* Минимальная высота */
+   }
+input[type="search"] {
+    border: none; /* Убираем рамку */
+    outline: none; /* Убираем свечение в Chrome и Safari */
+    -webkit-appearance: none; /* Убираем рамку в Chrome и Safari */
+    width: 274px; /* Ширина поля */
+    vertical-align: middle; /* Выравнивание по середине */
+   }
+   input[type="submit"] {
+    width: 20px; /* Ширина кнопки */
+    height: 20px; /* Высота кнопки */
+    border: none; /* Убираем рамку */
+    background: url(images/video.png) no-repeat 50% 50%; /* Параметры фона */
+   }

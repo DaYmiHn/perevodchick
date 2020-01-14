@@ -33,12 +33,13 @@ if(isset($_GET['word']) && isset($_GET['perevod'])){
 	
 	<div id="container">
 		<div class="gramm-block material">
-			<!-- <iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=PLD6SPjEPomasIFEwzlWscfw8qtwiDsDgL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/videoseries?list=PLD6SPjEPomasIFEwzlWscfw8qtwiDsDgL" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 		<div class="acount-block material">
 			<?php 
 			if (isset($_SESSION['login'])) {
 				echo '<input type="hidden" id="id_user" value="'.$_SESSION["id"].'">';
+				echo '<input type="hidden" id="login_user" value="'.$_SESSION["fio"].'">';
 				echo "Привет <b>".$_SESSION["login"]."</b><br>ID: ".$_SESSION["id"]."<br>Пароль: ".$_SESSION["pass"]."<br>";
 				echo '<input type="button" id="exit" value="ВЫЙТИ">';
 			} else {
@@ -109,11 +110,44 @@ include 'script/gramm_parser.php';
 			<h1 contenteditable="true" id="fio">Введите Имя и Фамилию</h1>
 			<p>Online</p>
 		</div>
-		<div class="profile_item1 material">Чат</div>
-		<div class="profile_item2 material"></div>
-		<div class="profile_item3 material"></div>
-		<div class="profile_item4 material"></div>
-		<div class="profile_item5 material"><div class="viktoryna material">
+		<div class="profile_item1 material">
+			<h1>Чат</h1>
+			<div class="news_content">
+				<?php //if (!isset($db)) {
+					require_once "classes/autoload.php";
+					$db = new DB();
+				//}
+				$db->echo_chat() ?>
+			</div>
+			<br>
+			<div class="search">
+     <input type="search" name="q" placeholder="Введите сообщение (only English)..." 
+     onkeypress="return (event.charCode >= 65 && event.charCode <= 90) || 
+     (event.charCode >= 97 && event.charCode <= 122) || 
+     (event.charCode >= 31 && event.charCode <= 57)" 
+     ></input>
+     <input type="submit" value=">" >
+   </div>
+		</div>
+		<div class="profile_item2 material"><h1 style="font-size:  60pt"><?php 
+			$sql = "SELECT COUNT(`id`) FROM `history`";
+			$result = $db->connection->query($sql);
+			$row=$result->fetch();
+			echo $row["COUNT(`id`)"];
+		 ?></h1>слов в истории</div>
+		<div class="profile_item3 material"><h1 style="font-size:  60pt"><?php 
+			$sql = "SELECT COUNT(`id`) FROM `history` WHERE `rating`>9";
+			$result = $db->connection->query($sql);
+			$row=$result->fetch();
+			echo $row["COUNT(`id`)"];
+		 ?></h1>слов ты уже выучил</div>
+		<div class="profile_item4 material"><h1 style="font-size:  60pt">7</h1>слов угадал в викторине</div>
+		<div class="profile_item5 material">
+			<center>
+				
+			<h1 style="margin-bottom: 10px">Викторина</h1>
+			</center>
+			<div class="viktoryna" style="box-shadow: inset 0px 0px 10px rgba(0,0,0,0.1);">
 		<?php include 'script/viktoryna.php' ?>
 	</div></div>
 		<!-- <div class="profile_item6 material"></div> -->
@@ -122,7 +156,8 @@ include 'script/gramm_parser.php';
 	</div>
 <script src="js/script.js"></script>
 <script>
-	let timerId = setInterval(function(){$("#hyinya").load(location.href + " #hyinya");} , 2000);
+	let history = setInterval(function(){$("#hyinya").load(location.href + " #hyinya");} , 2000);
+	// let chat = setInterval(function(){$(".news_content").load(location.href + " .news_content");} , 2000);
 
 	
 	$.ajax({

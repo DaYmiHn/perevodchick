@@ -60,6 +60,14 @@ public function increment_word_rate($id,$action) {
 	$result = $this->connection->query($sql);
 }
 
+public function echo_chat() {
+	$sql = "SELECT * FROM chat";
+	$result = $this->connection->query($sql);
+	while ($row=$result->fetch()){
+		echo "<div><b>".$row['user'].":</b> ".$row['body']."</div><hr>";
+	}
+	// echo $sql;
+}
 
 public function login($login,$pass) {
 	$sql = "SELECT * FROM user WHERE login = '".$login."'";
@@ -69,6 +77,7 @@ public function login($login,$pass) {
      	$_SESSION["id"] = $row['id'];
 		$_SESSION["login"] = $login;
      	$_SESSION["pass"] = $pass;
+     	$_SESSION["fio"] = $row['fio'];
      	echo "да";
 	} elseif ($row['login'] == $login && $row['pass'] != $pass) {
 		echo "не";
@@ -81,6 +90,7 @@ public function login($login,$pass) {
      	$_SESSION["id"] = $row['id'];
 		$_SESSION["login"] = $login;
      	$_SESSION["pass"] = $pass;
+     	$_SESSION["fio"] = $fio;
      	echo "да";
 	}
 }
